@@ -1,5 +1,5 @@
 # Menggunakan image Node.js versi 14-alpine
-FROM node:14-alpine
+FROM node:14
 
 # Mengatur Work Directory di dalam container menjadi "/app"
 WORKDIR /app

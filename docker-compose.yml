@@ -11,8 +11,7 @@ services:
     # Volume app-db akan digunakan untuk penyimpanan database
     volumes:
       - app-db:data/db
-    ports:
-      - 27017:27017
+
   # Service 2 (item-app)
   item-app:
     # Menentukan image yang digunakan untuk service item-app
