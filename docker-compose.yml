@@ -2,17 +2,7 @@
 version: "3.7"
 
 services:
-  # Service 1 (item-db)
-  item-db:
-    # Menentukan image yang digunakan untuk service item-db
-    image: mongo:3
-    # Mengatur service agar selalu restart ketika berhenti
-    restart: always
-    # Volume app-db akan digunakan untuk penyimpanan database
-    volumes:
-      - app-db:data/db
-
-  # Service 2 (item-app)
+  # Service 1 (item-app)
   item-app:
     # Menentukan image yang digunakan untuk service item-app
     image: ariqhwari/item-app:v1
@@ -24,6 +14,15 @@ services:
     # Service item-app akan bergantung pada item-db
     depends_on:
       - item-db
+  # Service 2 (item-db)
+  item-db:
+    # Menentukan image yang digunakan untuk service item-db
+    image: mongo:3
+    # Mengatur service agar selalu restart ketika berhenti
+    restart: always
+    # Volume app-db akan digunakan untuk penyimpanan database
+    volumes:
+      - app-db:/data/db
 
 # Mengatur volume dengan nama app-db
 volumes:
